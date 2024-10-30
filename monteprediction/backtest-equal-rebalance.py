@@ -112,6 +112,7 @@ class Backtest:
         target_weights = np.append(asset_weights, cash_weight)
         
         return target_weights
+    
     def _update_wealth_weights(self, returns, weights, wealth):
         # Calculate the portfolio return excluding the cash portion
         new_weights = weights.copy()

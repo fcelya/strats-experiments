@@ -111,7 +111,7 @@ class Backtest:
             diff[worth_changing&(diff<0)] = diff[worth_changing&(diff<0)]*(down_tot+(up_tot-up_wc))/down_wc
         diff[~worth_changing] = 0.0
         s = (current_weights + diff).sum()
-        assert s>1-1e6 and s<1+1e6
+        assert s>1-1e-6 and s<1+1e-6
         return current_weights + diff
     
     def calculate_weights(self, available_data):
